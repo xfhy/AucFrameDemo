@@ -1,2 +1,2 @@
-include ':app'
-rootProject.name='ComponenDemo'
+include ':app', ':lib:base', ':lib:common'
+rootProject.name = 'ComponenDemo'

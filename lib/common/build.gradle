@@ -1,0 +1,8 @@
+//由于common模块是依赖base的,所以common的配置可以直接引入base
+apply {
+    from "${project.rootDir.path}/buildLib.gradle"
+}
+
+dependencies {
+    api project(":lib:base")
+}

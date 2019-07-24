@@ -1,0 +1,29 @@
+//该文件是lib的公共gradle  用于管理篱笆中的模块  里面是一些公共的内容
+
+apply {
+    plugin "com.android.library"
+    plugin "kotlin-android"
+    plugin "kotlin-android-extensions"
+}
+
+android {
+    compileSdkVersion Config.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Config.minSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
