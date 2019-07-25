@@ -1,2 +1,4 @@
-include ':app', ':lib:base', ':lib:common'
+include ':app', ':lib:base', ':lib:common',
+        ':feature:feature0:export', ':feature:feature1:export',
+        ':feature:feature0:pkg', ':feature:feature1:pkg'
 rootProject.name = 'ComponenDemo'

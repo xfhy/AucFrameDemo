@@ -1,0 +1,8 @@
+//pkg是只依赖各自的export,所以是:feature:feature1:export   这样可以独立
+apply {
+    from "${project.rootDir.path}/buildLib.gradle"
+}
+
+dependencies {
+    api project(":feature:feature1:export")
+}
