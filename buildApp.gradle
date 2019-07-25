@@ -1,0 +1,61 @@
+//可以在每个app中的build.gradle都使用这些公共属性
+apply {
+    plugin "com.android.application"
+    plugin "kotlin-android"
+    plugin "kotlin-android-extensions"
+}
+
+android {
+    defaultConfig {
+        minSdkVersion Config.minSdkVersion
+        compileSdkVersion Config.compileSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+        //除了launcher以外  每个applicationId都是有 feature 的模块名 后缀的  ,方便便我们在⼿手机上同时装多个应⽤用
+        applicationId Config.applicationId + suffix
+        targetSdkVersion Config.targetSdkVersion
+        multiDexEnabled true
+        resValue "string", "app_name", Config.appName + suffix
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+
+    //我们在开发过程当中可能会遇到这样的问题，导入了很多的三方库或者框架，在项目编译的时候会报重复文件错误
+    //解决办法是加入下面这个  也可以是其他的文件
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+
+    dexOptions {
+        //改进增量构建
+        preDexLibraries true
+        javaMaxHeapSize "8g"
+        maxProcessCount 8
+        dexInProcess = true
+    }
+
+}
+
+dependencies {
+    // LeakCanary
+    debugImplementation Config.depConfig.leakcanary.android
+    debugImplementation Config.depConfig.leakcanary.support_fragment
+    releaseImplementation Config.depConfig.leakcanary.android_no_op
+}
+
+def getSuffix() {
+    if (project.path == ":feature:launcher:app") return ""
+    return project.path.replace(":", "_").substring(":feature".length(),
+            project.path.length() - ":app".length())
+}

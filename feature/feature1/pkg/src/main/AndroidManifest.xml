@@ -1,2 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xfhy.feature1.pkg" />
+    package="com.xfhy.feature1.pkg" >
+
+    <application>
+        <activity
+            android:name=".main.Feature1Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="user"
+            android:windowSoftInputMode="stateHidden" />
+    </application>
+
+</manifest>

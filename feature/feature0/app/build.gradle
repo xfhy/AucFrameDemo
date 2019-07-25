@@ -1,0 +1,10 @@
+//app 是只依赖各⾃自的  pkg
+apply {
+    from "${project.rootDir.path}/buildApp.gradle"
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    api project(":feature:feature0:pkg")
+}
