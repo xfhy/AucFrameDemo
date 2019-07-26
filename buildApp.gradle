@@ -1,4 +1,7 @@
 //可以在每个app中的build.gradle都使用这些公共属性
+
+GLogU.d(project.toString() + " -> app")
+
 apply {
     plugin "com.android.application"
     plugin "kotlin-android"

@@ -1,6 +1,6 @@
-include ':lib:base', ':lib:common',
-        ':feature:feature0:export', ':feature:feature1:export',
-        ':feature:feature0:pkg', ':feature:feature1:pkg',
-        ':feature:feature0:app', ':feature:feature1:app',
-        ':feature:launcher:app',
+GLogU.d("setting.gradle")
+
+//加了一个监听器  然后在settingsEvaluated时include
+ConfigUtils.addBuildListener(gradle)
+
 rootProject.name = 'ComponenDemo'
