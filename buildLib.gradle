@@ -1,6 +1,6 @@
 //该文件是lib的公共gradle  用于管理lib中的模块  里面是一些公共的内容
 
-GLogU.d(project.toString() + " -> lib")
+GLog.d(project.toString() + " -> lib")
 
 apply {
     plugin "com.android.library"

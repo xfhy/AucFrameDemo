@@ -1,8 +1,6 @@
 
 //这个相当于主的app,把所有的模块都利用起来那种  所以需要把pkg全部引入
-apply {
-    from "${project.rootDir.path}/buildApp.gradle"
-}
+
 
 dependencies {
     api project(":feature:feature0:pkg")

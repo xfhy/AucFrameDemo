@@ -1,4 +1,4 @@
-class GLogU {
+class GLog {
 
     def static debugSwitch = true
     /**
@@ -21,6 +21,7 @@ class GLogU {
         } else {
             sb.append(processContents(contents))
         }
+        sb.append("\n")
         print sb.toString()
         return contents
     }

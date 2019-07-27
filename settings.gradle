@@ -1,4 +1,4 @@
-GLogU.d("setting.gradle")
+GLog.d("setting.gradle")
 
 //加了一个监听器  然后在settingsEvaluated时include
 ConfigUtils.addBuildListener(gradle)

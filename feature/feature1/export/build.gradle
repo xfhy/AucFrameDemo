@@ -1,7 +1,4 @@
 //export 是依赖common的
-apply {
-    from "${project.rootDir.path}/buildLib.gradle"
-}
 
 dependencies {
     api project(":lib:common")

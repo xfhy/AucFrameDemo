@@ -1,6 +1,4 @@
-apply {
-    from "${project.rootDir.path}/buildLib.gradle"
-}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
