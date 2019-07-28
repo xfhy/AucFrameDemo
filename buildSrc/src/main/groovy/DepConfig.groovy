@@ -6,7 +6,7 @@ class DepConfig {
     /**
      * 是否使用本地的
      */
-    boolean userLocal
+    boolean useLocal
     /**
      * 本地路径
      */
@@ -34,10 +34,10 @@ class DepConfig {
 
     DepConfig(String path, boolean isApply) {
         if (path.startsWith(":")) {
-            this.userLocal = true
+            this.useLocal = true
             this.localPath = path
         } else {
-            this.userLocal = false
+            this.useLocal = false
             this.remotePath = path
         }
         this.isApply = isApply

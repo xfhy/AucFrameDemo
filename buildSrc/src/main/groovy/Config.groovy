@@ -46,8 +46,8 @@ class Config {
             ],
 
             plugin       : [
-                    gradle: "com.android.tools.build:gradle:3.5.0-rc01",
-                    kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+                    gradle: new DepConfig("com.android.tools.build:gradle:3.5.0-rc01"),
+                    kotlin: new DepConfig("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
             ],
             support      : [
                     appcompat_androidx   : new DepConfig("androidx.appcompat:appcompat:$appcompat_androidx_version"),

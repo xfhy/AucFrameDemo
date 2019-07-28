@@ -52,11 +52,19 @@ android {
 
 dependencies {
     // LeakCanary
-    debugImplementation Config.depConfig.leakcanary.android
-    debugImplementation Config.depConfig.leakcanary.support_fragment
-    releaseImplementation Config.depConfig.leakcanary.android_no_op
+    debugImplementation Config.depConfig.leakcanary.android.dep
+    debugImplementation Config.depConfig.leakcanary.support_fragment.dep
+    releaseImplementation Config.depConfig.leakcanary.android_no_op.dep
+
+    //根据Config.pkgConfig来依赖所有pkg
+    for (def entrySet : ConfigUtils.getApplyPkgs().entrySet()) {
+        api entrySet.value.dep
+    }
 }
 
+/**
+ * 后缀
+ */
 def getSuffix() {
     if (project.path == ":feature:launcher:app") return ""
     return project.path.replace(":", "_").substring(":feature".length(),

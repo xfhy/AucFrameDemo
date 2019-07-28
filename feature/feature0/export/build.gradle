@@ -1,5 +1,2 @@
 //export 是依赖common的
 
-dependencies {
-    api project(":lib:common")
-}

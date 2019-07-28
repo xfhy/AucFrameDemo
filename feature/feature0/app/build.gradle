@@ -1,5 +1,2 @@
 //app 是只依赖各⾃自的  pkg
 
-dependencies {
-    api project(":feature:feature0:pkg")
-}

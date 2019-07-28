@@ -2,15 +2,15 @@
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api Config.depConfig.utilcode
-    api Config.depConfig.free_proguard
-    api Config.depConfig.swipe_panel
+    api Config.depConfig.utilcode.dep
+    api Config.depConfig.free_proguard.dep
+    api Config.depConfig.swipe_panel.dep
 
-    api Config.depConfig.support.appcompat_androidx
-    api Config.depConfig.support.recyclerview_androidx
-    api Config.depConfig.support.design
-    api Config.depConfig.support.multidex
-    api Config.depConfig.support.constraint
-    api Config.depConfig.kotlin
-    compileOnly Config.depConfig.leakcanary.android_no_op
+    api Config.depConfig.support.appcompat_androidx.dep
+    api Config.depConfig.support.recyclerview_androidx.dep
+    api Config.depConfig.support.design.dep
+    api Config.depConfig.support.multidex.dep
+    api Config.depConfig.support.constraint.dep
+    api Config.depConfig.kotlin.dep
+    compileOnly Config.depConfig.leakcanary.android_no_op.dep
 }
